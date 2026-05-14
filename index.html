@@ -4,19 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechStore SESI</title>
-    =<link rel="stylesheet" href="style.css">
+    <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
-    <div class=" container">
-        <h1>TechStore SESI</h1>              
+    <div class = "container">
+        <h1>🛒🕵️‍♂️TechStore SESI🕵️‍♂️🛒</h1>
         
-        <section class="formulario">
-            <h3>🤑🎁Dados da Venda🎁🤑</h3>
-            <input type="text" id = "inputNome"placeholder ="Nome do Cliente">
-            <input type="number" id="inputIdade" placeholder = "Idade do Cliente"> 
-            <input type="number" id="inputValor" placeholder = "Valor Total (R$)"> 
+        <section class = "formulario">
+            <h3>Dados da Venda:</h3>
+            <input type="text" id="inputNome" placeholder="Nome do Cliente">
+            <input type="number" id="inputIdade" placeholder="Idade do Cliente">
+            <input type="number" id="inputValor" placeholder="Valor total (R$)">
+
+            <select id="inputCupom">
+                <option value="false">Não possui cupom.</option>
+                <option value="true">Possui cupom(15% OFF).</option>
+            </select>
+
+            <button onclick="executarSistema()">🕵️‍♂️Finalizar Venda🕵️‍♂️</button>
+
         </section>
- 
+
+        <hr>
+
+        <section id="feedback">
+            <p id="mensagem-autorizacao">Preencha os dados acima.</p>
+            <ul id="lista-estoque"></ul>
+            <div id="relatorio-final" class = "card" style="display: none;">
+
+            </div>
+
+        </section>
+
     </div>
+
+    <script src="script.js"></script>    
 </body>
 </html>
+
