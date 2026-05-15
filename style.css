@@ -71,3 +71,14 @@ input, select{
     box-sizing: border-box;
 }
     
+hr{
+border: 0;
+border-top: 1px solid #ffffff;
+margin: 20px 0;
+}
+p{
+color: #ffffff;
+text-align: center;
+margin: 20px 0;
+
+}
