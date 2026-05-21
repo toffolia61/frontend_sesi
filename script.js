@@ -16,18 +16,35 @@ function executarSistema(){
         return;
     }
 
-    // Regras de negócio
-    if(idade >= 16) {
-        msg.innerText = `🕵️‍♂️venda autorizada🕵️‍♂️ ${nome}`;
-        msg.style.color = "#ffffff";
-
-        // Desconto
-        let ValorFinal = (Valor > 500 || cupom) ? valor * 0.85 : valor
-
-        //Estoque
-        let estoque = ["Placa de Video", "Processador", "Memória Ram"];
-        lista.innerHTML = ""; // Limpa a lista anterior
-
-
+    //  Regra de negócio
+    if(idade>=16){
+        msg.innerText = `🕵️‍♀️Venda autorizada🕵️‍♂️: ${nome}`;
+        msg.style.color = "#00ff88";
     }
+
+    //  Desconto
+    let valorFinal = (valor>500 || cupom) ? valor * 0.85 : valor;
+
+    //  Estoque
+    let estoque = ["Placa de Vídeo", "Processador", "Memória RAM"];
+    lista.innerHTML = ""; //  Limpa a lista anterior
+
+    // forEach: Percorre um array e aplica uma ação para cada elemento
+    estoque.forEach(item => {
+        let li = document.createElement("li");
+        li.innerText = `Item ${item} reservado.`;
+        lista.appendChild(li); // usado para adicionar um novo elemento
+    }); 
+
+//Relatorio
+relatorio.style.display= "block";
+relatorio.innerHTML=`
+<srtrong> RESUMO DO PEDIDO <\strong><br>
+Cliente:  R$ ${(nome)} <br>
+Total Original: R$ ${valor.toFixed(2)} <br>
+<strong> Total com Desconto: R$ ${valorFinal.toFixed(2)} <\strong>`;
+
+
 }
+
+
